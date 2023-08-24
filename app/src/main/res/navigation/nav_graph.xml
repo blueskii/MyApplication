@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dest_list">
+
+    <fragment
+        android:id="@+id/dest_list"
+        android:name="com.example.myapplication.ui.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_dest_list_to_dest_write"
+            app:destination="@id/dest_write" />
+        <action
+            android:id="@+id/action_dest_list_to_dest_detail"
+            app:destination="@id/dest_detail" />
+        <action
+            android:id="@+id/action_dest_list_to_dest_settings"
+            app:destination="@id/dest_settings" />
+        <action
+            android:id="@+id/action_dest_list_to_dest_login3"
+            app:destination="@id/dest_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_detail"
+        android:name="com.example.myapplication.ui.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_dest_detail_to_dest_update"
+            app:destination="@id/dest_update" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dest_login"
+        android:name="com.example.myapplication.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/dest_write"
+        android:name="com.example.myapplication.ui.WriteFragment"
+        android:label="Write"
+        tools:layout="@layout/fragment_write" />
+    <fragment
+        android:id="@+id/dest_update"
+        android:name="com.example.myapplication.ui.UpdateFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_dest_update_to_dest_list"
+            app:destination="@id/dest_list"
+            app:popUpTo="@id/dest_list"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest_settings"
+        android:name="com.example.myapplication.ui.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings"/>
+
+</navigation>
